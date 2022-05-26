@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-deployment
+spec:
+  selector:
+    matchLabels:
+      app: todo-pod
+  template:
+    metadata:
+      labels:
+        app: todo-pod
+    spec:
+      containers:
+      - name: todo-container
+        image: todo:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
