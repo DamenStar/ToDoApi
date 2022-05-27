@@ -28,6 +28,8 @@ app.MapGet("/", () => "Hello World!");
 
 app.MapGet("/d", () => "Hello Damen!");
 
+app.MapGet("/ds", () => "Hello DamenStar");
+
 app.MapGet("/weatherforecast", () =>
 {
     var forecast =  Enumerable.Range(1, 5).Select(index =>
